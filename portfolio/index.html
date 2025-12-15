@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2fdaa027c5.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/name-logo.png" class="logo">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Junior Software Developer</p>
+                <h1>Hi, I'm <span>Samarthya</span> Raj Ghimire<br>from Nepal</h1>
+            </div>
+        </div>
+    </div>
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/about.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About me</h1>
+                    <p>I am a BSc. IT first-year student with a strong interest in both frontend and backend development. I enjoy turning ideas into functional and user-friendly web applications using HTML, CSS, JavaScript, and Python.I have built several practical projects, including my personal portfolio, shopping website clones, login pages, and other hands-on web applications. These projects have helped me strengthen my problem-solving skills and understand how real-world websites are structured and built.I am a self-learner who values consistency and continuous improvement. I love building real projects, experimenting with new concepts, and learning by doing. My goal is to grow as a developer and secure a junior software developer role, where I can contribute, learn from experienced developers, and build impactful software.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Web development</span><br>Web app development</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2026</span><br>Actively searching for oppurtunities</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2026</span><br>Currently doing Bsc.It from Westcliff University</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-tittle">My services</h1> 
+            <div class="services-list">
+                <div>
+                    <h2>Web design</h2>
+                    <p>I build responsive and modern websites using HTML, CSS, JavaScript, and Python, focusing on clean design and smooth user experience.</p>
+                </div>
+                <div>
+                    <h2>App design</h2>
+                    <p>I create functional and user-friendly mobile applications that solve real-world problems and provide seamless performance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/person-website.webp">
+                    <div class="layer">
+                        <h3>Shopping website</h3>
+                        <p>The app helps you to shop groceries as well as electronic items</p>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/person-app.jpg">
+                    <div class="layer">
+                        <h3>Social Media app</h3>
+                        <p>The app connects you to the talented people around the world</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>ghimiresamarthyaraj@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i>+977-9803806271</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/samarthya.ghimire.3/" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/samarthya-raj-ghimire-88096b381/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/Samarthyag" target="_blank"><i class="fab fa-github"></i></a>
+                    </div>
+                    <a href="" class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab")
+        }
+    </script>
+    <script>
+        var sidemeu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemeu.style.right = "0";
+        }
+        function closemenu(){
+            sidemeu.style.right = "-200px"
+        }
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbygiRPp1AhLAm4FkEm8Vc_AcRVB-fV7YowlR-rISJR3CvP9dLiaxxg0rN22QIdlONmBYg/exec'
+const form = document.forms['submit-to-google-sheet']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+e.preventDefault()
+fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+.then(response => {
+    msg.innerHTML = "Message sent successfully"
+    setTimeout(function(){
+        msg.innerHTML = ""
+    },5000)
+    form.reset()
+})
+.catch(error => console.error('Error!', error.message))
+})
+</script>
+</body>
+</html>
